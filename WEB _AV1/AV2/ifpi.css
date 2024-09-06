@@ -10,14 +10,15 @@ body {
 }
 
 header {
-    background-color: #004a86;
+    background-color: #2f9e41;
     color: white;
     padding: 10px 0;
     text-align: center;
 }
 
 header .logo img {
-    height: 60px;
+    height: 100px;
+    width: 220px;
 }
 
 nav ul {
