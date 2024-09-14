@@ -7,22 +7,23 @@
 body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
+    background-color: #f4f4f4;
 }
 
 header {
-    background-color: #2f9e41;
+    background-color: #004a86;
     color: white;
     padding: 10px 0;
     text-align: center;
 }
 
 header .logo img {
-    height: 100px;
-    width: 220px;
+    height: 60px;
 }
 
 nav ul {
     list-style: none;
+    text-align: center;
 }
 
 nav ul li {
@@ -36,9 +37,41 @@ nav ul li a {
     font-size: 18px;
 }
 
+/* Estilos para o layout flexbox */
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+    margin: 20px;
+}
+
+/* Div lateral esquerda */
+.sidebar-left {
+    width: 20%;
+    background-color: #e4e4e4;
+    padding: 20px;
+    margin-right: 20px;
+}
+
+/* Div lateral direita */
+.sidebar-right {
+    width: 20%;
+    background-color: #e4e4e4;
+    padding: 20px;
+    margin-left: 20px;
+}
+
+/* Conteúdo principal */
+.main-content {
+    width: 60%;
+    background-color: white;
+    padding: 20px;
+}
+
+/* Banner */
 .banner {
     background: url('../img/banner.jpg') no-repeat center center/cover;
-    height: 400px;
+    height: 200px;
     text-align: center;
     color: white;
     display: flex;
@@ -47,19 +80,20 @@ nav ul li a {
 }
 
 .banner h1 {
-    font-size: 48px;
+    font-size: 32px;
 }
 
 .info {
     display: flex;
     justify-content: space-around;
-    margin: 20px;
+    margin-top: 20px;
 }
 
 .info .box {
     background-color: #f4f4f4;
     padding: 20px;
     text-align: center;
+    width: 45%;
 }
 
 .info .box h2 {
@@ -80,6 +114,5 @@ footer {
     color: white;
     text-align: center;
     padding: 10px 0;
-    position: absolute;
-    width: 100%;
+    margin-top: 20px;
 }
