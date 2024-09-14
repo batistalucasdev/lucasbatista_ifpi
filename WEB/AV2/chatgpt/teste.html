@@ -1,15 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Width issue</title>
+    <style type="text/css">
+        body {
+            margin: 0;
+        }
+
+        #left {
+            width: 50%;
+            min-width: 250px;
+            background: lightcoral;
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        #right {
+            width: 50%;
+            min-width: 250px;
+            background: orange;
+            display: inline-block;
+            vertical-align: top;
+        }
+    </style>
 </head>
+
 <body>
-    <section>
-        <h2>Cabeçalho</h2>
-        <img src="passaro.jpg" alt="pássaro" />
-      </section>
-      
+    <div id="left">Left</div>
+    <div id="right">Right</div>
 </body>
+
 </html>
