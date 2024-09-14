@@ -38,9 +38,9 @@ nav ul li a {
 
 .banner {
     background: url('../img/banner.jpg') no-repeat center center/cover;
-    height: 400px;
+    height: 200px;
     text-align: center;
-    color: white;
+    color: black;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -76,7 +76,7 @@ nav ul li a {
 }
 
 footer {
-    background-color: #333;
+    background-color: #2f9e41;
     color: white;
     text-align: center;
     padding: 10px 0;
