@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IFPI - Instituto Federal do Piauí</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        /* Estilo para as seções dos cursos */
+        .tipo_cursos {
+            display: flex;
+            /* Ativa o Flexbox */
+            justify-content: space-between;
+            /* Distribui o espaço uniformemente entre as seções */
+            gap: 20px;
+            /* Espaçamento entre as seções */
+            margin-top: 20px;
+        }
+
+        .tipo_cursos section {
+            flex: 1;
+            /* Faz com que cada seção ocupe o mesmo espaço */
+            padding: 20px;
+            background-color: #f4f4f4;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .tipo_cursos section h3 {
+            margin-bottom: 10px;
+        }
+
+        .tipo_cursos section ul {
+            list-style: none;
+            padding-left: 0px;
+        }
+
+        .tipo_cursos section ul li {
+            margin-bottom: 8px;
+        }
+
+        .tipo_cursos section ul li a {
+            color: #004a86;
+            text-decoration: none;
+        }
+
+        #texto_centralizado {
+            display: inline;
+            text-align: center;
+        }
+
+        img {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        header {
+            background-color: #2f9e41;
+            color: white;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+        header .logo img {
+            height: 100px;
+            width: 200px;
+        }
+
+        nav ul {
+            list-style: none;
+        }
+
+        nav ul li {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 18px;
+        }
+
+        .banner {
+            background: url('../img/banner.jpg') no-repeat center center/cover;
+            height: 200px;
+            text-align: center;
+            color: black;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .banner h1 {
+            font-size: 48px;
+        }
+
+        .info {
+            display: flex;
+            justify-content: space-around;
+            margin: 20px;
+        }
+
+        .info .box {
+            background-color: #f4f4f4;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .info .box h2 {
+            margin-bottom: 10px;
+        }
+
+        .btn {
+            background-color: #2f9e41;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        footer {
+            background-color: #2f9e41;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: absolute;
+            width: 100%;
+
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+            <img src="https://maisoeiras.com.br/wp-content/uploads/2018/02/IFPI.jpg" alt="Logo IFPI">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#cursos">Cursos</a></li>
+                <li><a href="#suap">SUAP</a></li>
+                <li><a href="#sobre">Sobre</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="banner">
+        <img src="https://www.ifpi.edu.br/topo_ifpi.png" alt="Logo IFPI">
+        <h2>Bem-vindo ao Instituto Federal do Piauí</h2>
+        <img src="https://www.ifpi.edu.br/topo_ifpi.png" alt="Logo IFPI">
+    </section>
+
+    <section id="texto_centralizado">
+        <p>Excelência em ensino, pesquisa e extensão</p>
+    </section>
+
+    <br>
+
+    <section>
+        <a href="https://cointer.institutoidv.org/">
+            <img src="https://www.ifpi.edu.br/home/@@collective.cover.banner/b07c8144-71b0-415b-b711-589ad1549794/@@images/68b8be38-1a93-49ca-9faf-712f91901261.jpeg"
+                alt="">
+        </a>
+    </section>
+
+    <br>
+
+    <section>
+        <a href="https://www.ifpi.edu.br/processos-seletivos/chamadas-publicas2/chamadas-publicas-2024.2">
+            <img src="https://www.ifpi.edu.br/home/@@collective.cover.banner/c273c6c8-bf18-4572-a9c4-1e26de674e0d/@@images/e3bac917-b3ba-4603-9950-753886d1538d.png"
+                alt="">
+        </a>
+    </section>
+
+    <br>
+
+    <section>
+        <a
+            href="https://www.ifpi.edu.br/noticias/ifpi-divulga-calendario-de-matriculas-para-aprovados-no-classificatorio/view">
+            <img src="https://www.ifpi.edu.br/noticias/ifpi-divulga-calendario-de-matriculas-para-aprovados-no-classificatorio/classificatorio-2024-2-parte-2_matricula-site.png/@@images/7c1a395d-84bf-41af-bcf0-e15e033ace7e.png"
+                alt="">
+        </a>
+    </section>
+
+    <section class="info">
+        <div class="box">
+            <h2>Cursos</h2>
+            <p>Conheça os diversos cursos da Área de Tecnologia oferecidos pelo IFPI.</p>
+            <a href="cursos.html" class="btn">Lista de cursos</a>
+        </div>
+        <div class="box">
+            <h2>Portal Acadêmico</h2>
+            <p>Acompanhe as notas e faltas do seu curso. Aprenda mais sobre o SUAP</p>
+            <a href="suap.html" class="btn">Página do SUAP</a>
+        </div>
+    </section>
+
+    <section class="banner"></section>
+    <h2>Cursos da Área de Tecnologia do Instituto Federal do Piauí</h2>
+    <br>
+    </section>
+
+    <section id="texto_centralizado">
+        <p>Cursos oferecidos no Campus Teresina Central</p>
+    </section>
+
+    <div class="container">
+        <div class="sidebar">
+            <div class="categoria">
+                <h3>A Instituição</h3>
+                <ul>
+                    <li>Reitoria</li>
+                    <li>Pró-reitorias</li>
+                    <li>Campi</li>
+                    <li>Campi</li>                    
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="tipo_cursos">
+        <section id="cursos">
+            <a href="https://www.ifpi.edu.br/catalogo-de-cursos/cursos-superiores"></a>
+            <img src="https://www.ifpi.edu.br/catalogo-de-cursos/imgcatalogosuperiores.jpeg/@@images/e54ca30e-ec75-45b0-9a26-6375bf03ae75.jpeg"
+                alt="Cursos Superiores">
+            </a>
+            <h3><u>Cursos Superiores</u></h3>
+            <ul>
+                <li>Alimentos</li>
+                <li>Análise e Desenvolvimento de Sistemas</li>
+                <li>Geoprocessamento</li>
+                <li>Gestão Ambiental</li>
+                <li>Gestão de Recursos Humanos</li>
+                <li>Radiologia</li>
+                <li>Secretariado</li>
+                <li>Para saber mais acesse a página de <a
+                        href="https://www.ifpi.edu.br/catalogo-de-cursos/cursos-superiores">cursos superiores</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <a href="https://www.ifpi.edu.br/catalogo-de-cursos/cursos-tecnicos">
+                <img src="https://www.ifpi.edu.br/catalogo-de-cursos/imgcatalogotecnicos.jpeg/@@images/d550555a-3992-440c-89a0-9d40cd0bbb7d.jpeg"
+                    alt="Cursos Técnicos">
+            </a>
+            <h3><u>Cursos Técnicos</u></h3>
+            <ul>
+                <li>Técnico em Administração</li>
+                <li>Técnico em Desenvolvimento de Sistemas</li>
+                <li>Técnico em Eletrotécnica</li>
+                <li>Técnico em Eletrônica</li>
+                <li>Técnico em Informática</li>
+                <li>Técnico em Refrigeração e Climatização</li>
+                <li>Técnico em Sistemas de Energia Renovável</li>
+                <li>Para saber mais acesse a página de <a
+                        href="https://www.ifpi.edu.br/catalogo-de-cursos/cursos-tecnicos">cursos técnicos</a></li>
+            </ul>
+        </section>
+
+        <section id="suap">
+            <p>O site do <strong>SUAP</strong> (Sistema Unificado de Administração Pública) consiste em um software
+                desenvolvido por uma instituição pública para instituições públicas.</p>
+            <p>Para saber sobre documentos/ processos, ensino, pesquisa, extensao, atividades estudantis, desempenho
+                institucional, entre outros, acesse: <a href="https://suap.ifpi.edu.br/accounts/login/">SUAP</a></p>
+        </section>
+
+
+        <footer>
+            <p>&copy; 2024 Instituto Federal do Piauí - Todos os direitos reservados</p>
+        </footer>
+
+</body>
+
+</html>
