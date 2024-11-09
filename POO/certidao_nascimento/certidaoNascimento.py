@@ -6,57 +6,44 @@ OBS: utilizar atributos opcionais no construtor da classe
 from datetime import datetime
 
 class CertidaoNascimento():
-    def __init__(self, nome, data_nascimento, hora_nascimento, cidade, estado, nome_mae):
+    def __init__(self, nome, data_nascimento, hora_nascimento, cidade, estado, nome_mae, nome_pai = "Não informado"):
         self.nome = nome
-        self.data_nascimento = data_nascimento
-        self.hora_nascimento = hora_nascimento
+        self.data_nascimento = self.verificar_data(data_nascimento)
+        self.hora_nascimento = self.verificar_hora(hora_nascimento)
         self.cidade = cidade
         self.estado = estado
         self.nome_mae = nome_mae
+        self.nome_pai = nome_pai
 
-        if self.verificar_data(data_nascimento):
-            print("Data válida!")
-        else:
-            print("Data inválida!")
-
-        if self.verificar_hora(hora_nascimento):
-            print("Hora válida!")
-        else:
-            print("Hora inválida!")
-
-    def verificar_data(self, data_str):
-        formato = "%d/%m/%Y"
+    def verificar_data(self, data):
         try:
-            data_valida = datetime.strptime(data_str, formato)
-            return True
+            # Tenta converter a string para um objeto datetime com o formato DD/MM/AAAA
+            data = datetime.strptime(data, "%d/%m/%Y")
+            return data
         except ValueError:
-            return False
+            # Se houver um erro de valor, a data não é válida
+            # return False
+            raise ValueError("Data de nascimento inválida")
 
-    def verificar_hora(self, hora_str):
-        formato = "%H:%M"
+    def verificar_hora(self, hora):
+        # Tenta converter a string para um objeto datetime com o formato HH:MM
         try:
-            datetime.strptime(hora_str, formato)
-            return True
+            hora = datetime.strptime(hora, "%H:%M")
+            return hora
         except ValueError:
-            return False
+            # Se houver um erro de valor, a hora não é válida
+            # return False
+            raise ValueError("Hora de nascimento inválida")
 
-def main():
-    certidao01 = CertidaoNascimento("Lucas Batista", "02/02/1996", "15:00", "Teresina", "Piauí", "Maria")
-    print("Nome: ", certidao01.nome)
-    print("Data de Nascimento: ", certidao01.data_nascimento)
-    print("Hora de nascimento: ", certidao01.hora_nascimento)
-    print("Cidade: ", certidao01.cidade)
-    print("Estado: ", certidao01.estado)
-    print("Nome da mãe: ", certidao01.nome_mae)
-    print("")
+    def __str__(self):
+        saida01 = f'Nome: {self.nome}\nData de nascimento: {datetime.strftime(self.data_nascimento,"%d/%m/%Y")}'
+        saida02 = f'Hora de nascimento: {datetime.strftime(self.hora_nascimento,"%H:%M")}\nCidade: {self.cidade}\nEstado: {self.estado}'
+        saida03 = f'Nome da mãe: {self.nome_mae}\nNome do pai: {self.nome_pai}'
+        saida = f'{saida01}\n{saida02}\n{saida03}'
+        return saida
 
-    certidao02 = CertidaoNascimento("Cristiano Ronaldo", "05/02/1985", "23:99", "Ilha da Madeira", "Portugal", "Maria Dolores Aveiro")
-    print("Nome: ", certidao02.nome)
-    print("Data de Nascimento: ", certidao02.data_nascimento)
-    print("Hora de nascimento: ", certidao02.hora_nascimento)
-    print("Cidade: ", certidao02.cidade)
-    print("Estado: ", certidao02.estado)
-    print("Nome da mãe: ", certidao02.nome_mae)
-    print("")
-    
-main()
+certidao01 = CertidaoNascimento("Lucas Batista", "02/02/1996", "15:00", "Teresina", "Piauí", "Maria", "José")
+print(certidao01)
+print("")
+certidao02 = CertidaoNascimento("Cristiano Ronaldo", "05/02/1985", "23:59", "Ilha da Madeira", "Portugal", "Maria Dolores Aveiro")
+print(certidao02)
