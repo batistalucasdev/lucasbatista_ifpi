@@ -1,0 +1,15 @@
+def barra(n = 40, caractere = "*"):
+    print(n*caractere)
+
+print("Primeira execução:")
+barra()
+print("")
+print("Segunda execução:")
+barra(10)
+print("")
+print("Terceira execução:")
+barra(20,"+")
+print("")
+print("Quarta execução:")
+barra(1,"$")
+print("")
