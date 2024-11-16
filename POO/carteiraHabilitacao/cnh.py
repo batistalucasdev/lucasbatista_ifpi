@@ -23,9 +23,10 @@ class CarteiraHabilitacao:
             raise ValueError("Data de nascimento inválida")
 
     def valida_tipo_cnh(self, categoria_cnh):
-        #verificar se o tipo está entre o conjunto válido de CNHs
-        #se sim, retornar o tipo, se nao, retornar exceçao
-        pass
+        categorias_validas = {'A', 'B', 'C', 'D', 'E', 'ACC'}
+        if categoria_cnh in categorias_validas:
+            return categoria_cnh
+        raise ValueError(f'Categoria inválida.')
 
     def renovar_cnh(self):
         #se idade < 50, renovar por 10 anos
@@ -51,3 +52,10 @@ cnh01 = CarteiraHabilitacao("Arthur Morgan", "365.087.500-46", "50.329.075-0", "
 print(cnh01)
 print("")
 
+'''
+def valida_tipo_cnh(self, categoria_cnh):
+        categorias_validas = {'A', 'B', 'C', 'D', 'E', 'ACC'}
+        if categoria_cnh in categorias_validas:
+            return categoria_cnh
+        raise ValueError(f"Categoria inválida. Escolha entre {', '.join(categorias_validas)}.")
+'''
