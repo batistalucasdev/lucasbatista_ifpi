@@ -75,9 +75,8 @@ cnh01.mudar_categoria_cnh("C")
 print("\nCNH Atualizada:")
 print(f'{cnh01}\n')
 
-print("--------------------------------------------------------------------------------------------------------")
+print("Próximo cliente!\n")
 
-print("")
 print(f'{cnh02}\n')
 
 print("\nRenovando CNH...")
