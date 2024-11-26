@@ -20,7 +20,6 @@ o A hora do embarque não pode ser retroativa em relação ao momento de execuç
 o Crie pelo menos três objetos da classe, representando cartões de embarque diferentes.
 o Demonstre os métodos implementados e suas validações em ação.
 '''
-import random
 from datetime import datetime
 
 class CartaoEmbarque():
@@ -30,10 +29,10 @@ class CartaoEmbarque():
         self.__voo = voo
         self.__localizador = localizador
         self.__data = self.valida_data(data)
-        self.hora = hora
+        self.__hora = self.valida_hora(hora)
         self.__status = status
         self.__assento = assento
-
+    
     @property
     def nome (self):
         return self.__nome
@@ -57,37 +56,53 @@ class CartaoEmbarque():
         except ValueError:
             raise ValueError("Data de voo inválida")
 
-    @property    
+    @property
+    def hora (self):
+        return self.__hora
+    
+    def valida_hora (self, hora):
+        try:
+            hora = datetime.strptime(hora, "%H:%M")
+            return hora
+        except ValueError:
+            raise ValueError("Hora de voo inválida")
+
+    @property
     def status (self):
         return self.__status
     
     @status.setter
-    def status(self, status):
-        self.__status
+    def status(self, novo_status):
+        if novo_status not in ["Não realizado", "Realizado"]:
+            raise ValueError("Status inválido! Use 'Não realizado' ou 'Realizado'.")
+        self.__status = novo_status
     
     @property    
     def assento (self):
         return self.__assento
-    
-    def realiza_checkin(self, assentos_disponiveis):
-        if self.__status:
-            raise ValueError("O check-in já foi realizado.")
-        if not assentos_disponiveis:
-            raise ValueError("Náo há assentos disponíveis.")
+
+    @assento.setter
+    def assento (self, novo_assento):
+        if self.__status != "Realizado":
+            raise ValueError("Não é possível alterar o assento antes de realizar o check-in.")
+        if not novo_assento:
+            raise ValueError("Assento inválido.")
         
-        self.__status = True
-        self.assento = random.choice(assentos_disponiveis)
-        assentos_disponiveis.remove(self.__assento)
-        return f"O chech-in foi realizado com sucesso. Assento: {self.__assento}"
+        self.__assento = novo_assento
         
-    def altera_assento():
-        pass
-'''
     def __str__(self):
-        saida01 = f'Nome: {self.nome}\nCPF: {self.cpf}\nRG: {self.rg}'
-        saida02 = f'Data de nascimento: {datetime.strftime(self.data_nascimento,"%d/%m/%Y")}\nData de validade: {datetime.strftime(self.data_validade,"%d/%m/%Y")}\nData de emissão: {datetime.strftime(self.data_emissao,"%d/%m/%Y")}'
-        saida03 = f'Categoria atual: {self.categoria_cnh}\nPermissão: {self.permissao}'
+        saida01 = f'Nome: {self.nome}\nVoo: {self.voo}\nLocalizador: {self.localizador}'
+        saida02 = f'Data do voo: {datetime.strftime(self.data, "%d/%m/%Y")}\nHora do voo: {datetime.strftime(self.hora, "%H:%M")}'
+        saida03 = f'Status: {self.status}\nAssento: {self.assento}'
         saida = f'{saida01}\n{saida02}\n{saida03}'
         return saida
+    
+cartao01 = CartaoEmbarque("Lucas Batista", "LA3851", "ABC123", "25/11/2024", "15:00")
 
-'''
+print(f'{cartao01}')
+print("")
+cartao01.status = "Realizado"
+print(f'{cartao01}')
+print("")
+cartao01.assento = "05C"
+print(f'{cartao01}')
