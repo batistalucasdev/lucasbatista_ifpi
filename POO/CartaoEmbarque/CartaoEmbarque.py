@@ -77,7 +77,7 @@ class CartaoEmbarque():
             raise ValueError("Status inválido! Use 'Não realizado' ou 'Realizado'.")
         self.__status = novo_status
     
-    @property    
+    @property
     def assento (self):
         return self.__assento
 
