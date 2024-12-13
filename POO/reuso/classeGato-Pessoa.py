@@ -24,7 +24,6 @@ class Pessoa:
     def cpf(self):
         return self.__cpf
     
-    
 class Gato:
     def __init__(self, nome, peso, idade, raca):
         self.__nome = nome
@@ -62,15 +61,9 @@ garfield.escolher_tutor(jack)
 print(garfield.tutor.nome)
 
 print("")
-
 rose = Pessoa("Rose", "Titanic, 1912", "674.527.996-35")
-print(garfield.tutor)
-
-'''
-print(maria.gato)
-gatrim = Gato("Gatrim", 1, 0.5, "Não definido")
-joao.adotar_gato(gatrim)
-print(joao.gato.nome)
-maria.adotar_gato(gatrim)
-print(maria.gato.nome)
-'''
+garfield.escolher_tutor(rose)
+print(garfield.tutor.nome)
+midnight = Gato("Midnight", 2, 6, "Vira lata")
+midnight.escolher_tutor(jack)
+print(midnight.tutor.nome)
