@@ -59,8 +59,6 @@ garfield = Gato("Urea", 5, 2, "Não definido")
 jack = Pessoa("Jack", "Avenida Raul Lopes, 1000", "123.456.789-00")
 garfield.escolher_tutor(jack)
 print(garfield.tutor.nome)
-
-print("")
 rose = Pessoa("Rose", "Titanic, 1912", "674.527.996-35")
 garfield.escolher_tutor(rose)
 print(garfield.tutor.nome)
