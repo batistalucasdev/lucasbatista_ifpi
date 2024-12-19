@@ -53,7 +53,8 @@ class Gato:
         return self.__raca
     
     def escolher_tutor(self, tutor):
-        self.tutor = tutor
+        if type(tutor) == Pessoa: # if isintance(tutor, Pessoa):
+            self.tutor = tutor
     
 garfield = Gato("Urea", 5, 2, "Não definido")
 jack = Pessoa("Jack", "Avenida Raul Lopes, 1000", "123.456.789-00")

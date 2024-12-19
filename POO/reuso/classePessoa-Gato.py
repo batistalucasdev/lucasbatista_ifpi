@@ -26,7 +26,11 @@ class Pessoa:
         return self.__cpf
     
     def adotar_gato(self, gato):
-        self.gato = gato
+        if not gato.tem_dono:
+            self.gato = gato
+            gato.tem_dono = True
+        else:
+            print("Gato já tem dono!")
     
 class Gato:
     def __init__(self, nome, peso, idade, raca):
@@ -34,6 +38,7 @@ class Gato:
         self.__peso = peso
         self.__idade = idade
         self.__raca = raca
+        self.__tem_dono = False
 
     @property
     def nome(self):
@@ -54,6 +59,15 @@ class Gato:
     @property
     def raca(self):
         return self.__raca
+    
+    @property
+    def tem_dono(self):
+        return self.__tem_dono
+    
+    @tem_dono.setter
+    def tem_dono(self, gato):
+        self.__tem_dono = gato
+
     
 mimi = Gato("Sem nome", 2, 1, "Não definido")
 joao = Pessoa("João Python", "Avenida X, 48", "123.456.789-00")
