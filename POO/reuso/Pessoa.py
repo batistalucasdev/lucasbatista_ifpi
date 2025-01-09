@@ -1,5 +1,5 @@
 class Pessoa:
-    def __init__(self,nome,idade,peso,altura,sexo,estado="vivo",est_civil="solteiro",conjuge=None):
+    def __init__(self,nome,idade,peso,altura,sexo,estado="vivo",est_civil="solteiro",conjuge=None,mae=None):
         self.__nome = nome
         self.__idade = idade
         self.__peso = peso
@@ -8,6 +8,8 @@ class Pessoa:
         self.__estado = estado
         self.__est_civil = est_civil
         self.__conjuge = conjuge
+        self.__pai = None
+        self.__mae = None
 
     @property
     def nome(self):
