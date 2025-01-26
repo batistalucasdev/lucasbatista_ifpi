@@ -43,7 +43,6 @@ class ContaImposto(ContaCorrente):
         return (f"ContaImposto [Número: {self.numero}, Titular: {self.titular}, Saldo: {self._saldo}, "
                 f"Percentual Imposto: {self.percentual_imposto}%]")
 
-# Exemplos de uso
 def main():
     conta1 = ContaCorrente("001", "João", 1000)
     conta2 = ContaCorrente("002", "Maria", 500)
@@ -55,18 +54,22 @@ def main():
     print(conta1)
     conta1.debitar(500)
     print(conta1)
+    print("")
 
     conta1.transferir(200, conta2)
     print(conta1)
     print(conta2)
-
+    print("")
+    
     print(poupanca)
     poupanca.renderJuros(2)
     print(poupanca)
+    print("")
 
     print(imposto)
     imposto.calcula_Imposto()
     print(imposto)
+    print("")
 
 if __name__ == "__main__":
     main()
