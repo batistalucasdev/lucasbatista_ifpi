@@ -72,7 +72,7 @@
                     </div>
                 </form>
 
-                <a href="index.php" class='btn btn-primary'>Voltar para início</a>
+                <a href="welcome.php" class='btn btn-primary'>Voltar para início</a>
 
                 </div>
             </div>

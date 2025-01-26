@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="ControleEstoque/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <title>Pesquisa</title>
   </head>
@@ -75,7 +75,7 @@
                     </tbody>
                     </table>
                 
-                <a href="index.php"><button type="button" class="btn btn-primary">Voltar para início</button></a>
+                <a href="welcome.php"><button type="button" class="btn btn-primary">Voltar para início</button></a>
 
                 </div>
             </div>

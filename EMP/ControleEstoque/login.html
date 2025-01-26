@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Rei do Salgado - Login</title>
+    <style>
+        /* Estilo adicional para o botão */
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: #766cb2;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #45a049; /* Cor ligeiramente mais escura ao passar o mouse */
+        }
+
+        button:active {
+            background-color: #3e8e41; /* Cor mais escura ao clicar */
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-image">
+            <img src="https://www.mishainfotech.com/images/InventoryManagement.png" alt="Imagem de Estoque">
+        </div>
+        <div class="form">
+            <h1>Rei do Salgado</h1>
+            <form id="login-form">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Login</h1>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="usuario">Usuário</label>
+                        <input id="usuario" type="text" name="usuario" placeholder="Digite seu usuário" required>
+                    </div>
+                    <br>
+                    <div class="input-box">
+                        <label for="senha">Senha</label>
+                        <input id="senha" type="password" name="senha" placeholder="Digite sua senha" required>
+                    </div>
+                </div>
+                <button type="button" id="btnLogar">Logar</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="valida.js"></script>
+
+</body>
+</html>

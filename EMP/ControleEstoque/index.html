@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Gestor de Estoque - Cadastro</title>
+</head>
+<body>
+    <div class="container">
+        <div class="form-image">
+            <img src="https://www.mishainfotech.com/images/InventoryManagement.png" alt="">
+        </div>
+        <div class="form">
+            <h1>Gestor de Estoque</h1>
+            <form id="signup-form" onsubmit="saveUser(event)">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Cadastre-se</h1>
+                    </div>
+                </div>
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="password">Senha</label>
+                        <input id="password" type="password" name="password" placeholder="Digite sua senha" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="confirmPassword">Confirme sua Senha</label>
+                        <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Digite sua senha novamente" required>
+                    </div>
+                </div>
+                <button type="submit">Cadastrar</button>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        function saveUser(event) {
+            event.preventDefault();
+    
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value.trim();
+            const confirmPassword = document.getElementById('confirmPassword').value.trim();
+    
+            // Verifica se os campos estão preenchidos
+            if (!email || !password || !confirmPassword) {
+                alert('Por favor, preencha todos os campos!');
+                return;
+            }
+    
+            // Verifica se as senhas coincidem
+            if (password !== confirmPassword) {
+                alert('As senhas não coincidem! Cadastro não realizado.');
+                return;
+            }
+    
+            // Salva usuário no localStorage
+            localStorage.setItem('userEmail', email);
+            localStorage.setItem('userPassword', password);
+            alert('Usuário cadastrado com sucesso!');
+            window.location.href = "login_page.html"; // Redireciona para a página de login
+        }
+    </script>
+    
+    
+</body>
+</html>

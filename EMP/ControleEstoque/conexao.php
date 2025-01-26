@@ -1,14 +1,8 @@
 <?php
-
-    //$server = "localhost";
-    //$user = "root";
-    //$pass = "";
-    //$bd = "ControleEstoque";
-
-    $server = "sql200.infinityfree.com";
-    $user = "if0_37921568";
-    $pass = "tupwgfdC5G";
-    $bd = "if0_37921568_controleestoque";
+    $server = "localhost";
+    $user = "root";
+    $pass = "";
+    $bd = "ControleEstoque";
 
     if ($conn = mysqli_connect($server, $user, $pass, $bd)){
         //echo "CONECTADO!\n";

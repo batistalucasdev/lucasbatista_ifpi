@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="ControleEstoque/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
 
     <title>Cadastro</title>
   </head>
@@ -37,7 +37,7 @@
 
            ?>
           <br>
-          <a href="index.php"><button type="button" class="btn btn-primary">Voltar</button></a>
+          <a href="welcome.php"><button type="button" class="btn btn-primary">Voltar</button></a>
 
         </div>
     </div>
