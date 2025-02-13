@@ -107,3 +107,4 @@ class PostoDeCombustivel:
 
     def __str__(self):
         return "\n".join([str(b) for b in self.__bombas])
+

@@ -1,1 +1,0 @@
-!pytest test_posto_combustivel.py
