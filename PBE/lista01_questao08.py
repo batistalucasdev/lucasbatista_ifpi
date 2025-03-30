@@ -13,12 +13,13 @@ def continuar(resposta):
     elif resposta == 'N':
         return resposta
     else:
-        return print(f"\nResposta inválida. Digite apenas 'S' ou 'N'!")
+        return print (f"Caractere inválido. Digite novamente")
     
 while True:
     try:
         numero = int(input("\nDigite um número qualquer: "))
         cubo = calcular_cubo(numero)
+        pergunta = input("\nDeseja continuar ou não?")
         #pergunta = continuar(resposta)
         break
     except:
