@@ -10,12 +10,11 @@ def par_impar(n):
     
 while True:
     try:
-        num = int(input("\nDigite um número: "))
-        if par_impar(num) == True:
-            print(f'\nO número {num} é par')
-            #print("\nO número %d é par."%num)
+        numero = int(input("\nDigite um número: "))
+        if par_impar(numero) == True:
+            print(f"\nO número {numero} é par.")
         else:
-            print("\nO número %d é ímpar."%num)
+            print("\nO número {numero} é ímpar.")
         break
     except:
         print("\nNúmero inválido. Digite novamente!")

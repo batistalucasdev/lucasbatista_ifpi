@@ -1,7 +1,6 @@
 '''
 2. Escreva um programa que leia o raio de um círculo e faça duas funções: uma função chamada área que calcula e retorna a área do círculo e outra função chamada perímetro que calcula e retorna o perímetro do círculo.
 Área = PI * r2; Perímetro = PI * 2 * r;
-Obs.: Sempre tratar a entrada de dados para evitar que o programa aborte.
 '''
 
 def calcular_perimetro(raio):
@@ -14,9 +13,9 @@ def calcular_area(raio):
     
 while True:
     try:
-        num = float(input("\nDigite o raio de um círculo: "))
-        print(f'\nO perímetro do círculo é {calcular_perimetro(num)}.')
-        print(f'\nA área do círculo é {calcular_area(num)}.')
+        numero = float(input("\nDigite o raio de um círculo: "))
+        print(f'\nO perímetro do círculo é {calcular_perimetro(numero)}.')
+        print(f'\nA área do círculo é {calcular_area(numero)}.')
         break
     except:
         print("\nNúmero inválido. Digite novamente!")
