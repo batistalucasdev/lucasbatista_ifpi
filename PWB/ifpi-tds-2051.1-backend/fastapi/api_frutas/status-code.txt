@@ -1,0 +1,11 @@
+HTTP Response - STATUS CODE
+
+200 --> Família OK
+    200 OK
+    201 CREATED
+    204 EMPTY 
+
+400 --> Erro do Cliente
+    404 NOT FOUND
+
+500 --> Erro do Servidor
