@@ -1,7 +1,6 @@
 '''
 3. Escreva um programa para ler uma temperatura em graus Fahrenheit. Faça uma função chamada celsius para calcular e retornar o valor correspondente em graus Celsius.
 Fórmula: C = ((F-32)/9)*5
-Obs.: Sempre tratar a entrada de dados para evitar que o programa aborte.
 '''
 
 def celsius(fahrenheit):
@@ -15,4 +14,4 @@ while True:
         print(f'\nO valor correspondente em graus Celsius é {valor_convertido:.2f}.')
         break
     except:
-        print("\nNúmero inválido. Digite novamente!")
+        print("\nValor inválido. Digite novamente!")

@@ -1,5 +1,5 @@
 '''Faça uma função que recebe um número inteiro por parâmetro e retorna verdadeiro se ele for par e falso se for ímpar.
-Obs.: Sempre tratar a entrada de dados para evitar que o programa aborte.
+Obs.: Sempre tratar a entrada de dados para evitar que o programa aborte.w
 '''
 
 def par_impar(n):
@@ -14,7 +14,7 @@ while True:
         if par_impar(numero) == True:
             print(f"\nO número {numero} é par.")
         else:
-            print("\nO número {numero} é ímpar.")
+            print(f"\nO número {numero} é ímpar.")
         break
     except:
-        print("\nNúmero inválido. Digite novamente!")
+        print("\nValor inválido. Digite novamente!")

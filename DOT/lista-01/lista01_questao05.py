@@ -4,7 +4,6 @@
 - para homens : (72.7 * h) - 58
 - para mulheres : (62.1 * h) - 44.7
 Observação: Altura = h (na fórmula acima).
-Obs.: Sempre tratar a entrada de dados para evitar que o programa aborte.
 '''
 
 def peso_ideal(h,sexo):

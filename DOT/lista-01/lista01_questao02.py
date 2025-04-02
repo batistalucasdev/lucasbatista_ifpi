@@ -18,4 +18,4 @@ while True:
         print(f'\nA área do círculo é {calcular_area(numero)}.')
         break
     except:
-        print("\nNúmero inválido. Digite novamente!")
+        print("\nValor inválido. Digite novamente!")
