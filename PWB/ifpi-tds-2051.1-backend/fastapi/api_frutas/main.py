@@ -1,6 +1,17 @@
 from fastapi import FastAPI, HTTPException
+from pydantic import BaseModel
 
 app = FastAPI()
+
+class Fruta(BaseModel):
+    id: int
+    nome: str
+    citrica: bool
+
+class FrutaUpdate(BaseModel):
+    id: int
+    nome: str
+    "citrico": True
 
 frutas = [
     {'id': 1,'nome': 'Banana'}, 
@@ -44,12 +55,21 @@ def frutas_detail(id: int):
         return fruta_localizada
     else:
         return Response(status_code=404, content='Fruta não localizada.')
-'''
+
 
 @app.post('/frutas', status_code=201)
 def frutas_create():
     frutas.append('manga')
     return {'nome': 'manga'}
+'''
+@app.post('/frutas', status_code=201)
+def frutas_create():
+    return f'Recebido --> {frutas.nome}'
+
+@app.put('/frutas/{id}')
+def frutas_update(id: int):
+    pass
+
 
 # Utilizados
 def obter_fruta_por_id(id: int):
