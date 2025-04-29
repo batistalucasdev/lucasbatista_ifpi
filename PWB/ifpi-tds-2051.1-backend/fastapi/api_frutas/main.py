@@ -70,7 +70,6 @@ def frutas_create():
 def frutas_update(id: int):
     pass
 
-
 # Utilizados
 def obter_fruta_por_id(id: int):
     for fruta in frutas:
