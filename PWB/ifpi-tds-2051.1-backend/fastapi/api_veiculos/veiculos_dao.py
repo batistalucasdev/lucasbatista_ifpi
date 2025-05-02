@@ -1,7 +1,7 @@
 # https://www.freecodecamp.org/news/work-with-sqlite-in-python-handbook/
 import sqlite3
 
-from modelos import Veiculo
+from modelos import Veiculo, VeiculoCreate
 
 
 class VeiculoDAO():
@@ -55,31 +55,37 @@ class VeiculoDAO():
       )
 
       return veiculo
-    
+  
+  
+  
+  
+  
   def remover_por_id(self, id: int):
-    with sqlite3.connect('veiculos.db') as conn:
-      cursor = conn.cursor()
+    with sqlite3.connect('veiculos.db') as con:
+      cursor =  con.cursor()
+    
+      sql = 'delete from Veiculos where id=?'
+      cursor.execute(sql,(id,))
+      resultado = cursor.fetchone()
 
-      # sql injection
-      sql = 'DELETE FROM Veiculos where id = ?'
-      cursor.execute(sql, (id,))
-      result = cursor.fetchone()
-
-      if not result:
-        return None
-
-      veiculo = Veiculo(
-        id=result[0],
-        nome=result[1], 
-        ano_fabricacao=result[2],
-        ano_modelo=result[3], 
-        valor=result[4]
-      )
-
-      return veiculo
+      if not resultado:
+        return 
 
   def atualizar(self, id: int, veiculo: Veiculo):
     pass
 
-  def inserir(self, veiculo: Veiculo):
-    pass
+  def inserir(self, veiculo: VeiculoCreate):
+    with sqlite3.connect('veiculos.db') as c:
+      cursor = c.cursor()
+
+      sql = '''INSERT INTO Veiculos(nome, ano_fabricacao, ano_modelo, valor)
+            VALUES (?, ?, ?, ?)'''
+      
+      cursor.execute(sql, (veiculo.nome, 
+                            veiculo.ano_fabricacao, 
+                            veiculo.ano_modelo, 
+                            veiculo.valor))
+      
+      
+      id = cursor.lastrowid
+      return Veiculo(id=id, **veiculo.dict())
