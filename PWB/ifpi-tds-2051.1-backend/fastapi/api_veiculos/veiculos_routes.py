@@ -40,3 +40,16 @@ def delete_veiculo(id:int):
       status_code=status.HTTP_404_NOT_FOUND,
       detail=f'Não existe um veículo com id = {id}'
     )
+
+@roteador_veiculos.put('/veiculos/{id}', status_code=status.HTTP_200_OK)
+def update_veiculo(id: int, veiculo_atualizado: VeiculoCreate):
+    veiculo_existente = veiculos_dao.obter_por_id(id)
+
+    if not veiculo_existente:
+        raise HTTPException(
+            status_code=status.HTTP_404_NOT_FOUND,
+            detail=f'Não existe um veículo com id = {id}'
+        )
+
+    veiculo = veiculos_dao.atualizar(id, veiculo_atualizado)
+    return veiculo

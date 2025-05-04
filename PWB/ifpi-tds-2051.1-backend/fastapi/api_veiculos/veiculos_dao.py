@@ -72,7 +72,16 @@ class VeiculoDAO():
         return 
 
   def atualizar(self, id: int, veiculo: Veiculo):
-    pass
+    with sqlite3.connect('veiculos.db') as conn:
+        cursor = conn.cursor()
+
+        sql = '''
+        UPDATE Veiculos
+        SET nome = ?, ano_fabricacao = ?, ano_modelo = ?, valor = ?
+        WHERE id = ?
+        '''
+        cursor.execute(sql, (veiculo.nome, veiculo.ano_fabricacao, veiculo.ano_modelo, veiculo.valor, id))
+        conn.commit()
 
   def inserir(self, veiculo: VeiculoCreate):
     with sqlite3.connect('veiculos.db') as c:
