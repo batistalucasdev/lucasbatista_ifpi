@@ -7,7 +7,7 @@ def login():
   ...
 
 @router.post('/auth/signup')
-def signup():
+def signup(data: SignUpUser):
   ...
 
 @router.post('/auth/forget-password')
