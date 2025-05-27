@@ -1,16 +1,21 @@
 from pydantic import BaseModel
 
-class usuarioBase(BaseModel):
+class UsuarioBase(BaseModel):
   nome: str
   email: str
   senha: str
 
-class Usuario(usuarioBase):
+class Usuario(UsuarioBase):
   id: int | None = None
 
 
-class SignUpUser(usuarioBase):
+class SignUpUser(UsuarioBase):
   pass
+
+
+class SignInUser(BaseModel):
+  email: str
+  senha: str
 
 
 class VeiculoBase(BaseModel):

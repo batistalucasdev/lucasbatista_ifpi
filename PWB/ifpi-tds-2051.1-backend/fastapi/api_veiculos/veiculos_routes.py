@@ -1,5 +1,7 @@
-from fastapi import APIRouter, HTTPException, status
-from modelos import VeiculoCreate
+from typing import Annotated
+from fastapi import APIRouter, Depends, HTTPException, status
+from auth_utils import get_current_user
+from modelos import Usuario, VeiculoCreate
 from veiculos_dao import VeiculoDAO
 
 roteador_veiculos = APIRouter()
@@ -7,15 +9,16 @@ roteador_veiculos = APIRouter()
 veiculos_dao = VeiculoDAO()
 
 @roteador_veiculos.post('/veiculos', status_code=status.HTTP_201_CREATED)
-def veiculos_create(novo: VeiculoCreate):
-  veiculo  = veiculos_dao.inserir(novo)
+def veiculos_create(novo: VeiculoCreate, user: Annotated[Usuario, Depends(get_current_user)]):
+
+  veiculo  = veiculos_dao.inserir(novo, user)
 
   return veiculo
 
 
 @roteador_veiculos.get('/veiculos')
-def veiculos_list():
-  veiculos = veiculos_dao.todos()
+def veiculos_list(user: Annotated[Usuario, Depends(get_current_user)]):
+  veiculos = veiculos_dao.todos_por_usuario(user)
   return veiculos
 
 
@@ -40,16 +43,3 @@ def delete_veiculo(id:int):
       status_code=status.HTTP_404_NOT_FOUND,
       detail=f'Não existe um veículo com id = {id}'
     )
-
-@roteador_veiculos.put('/veiculos/{id}', status_code=status.HTTP_200_OK)
-def update_veiculo(id: int, veiculo_atualizado: VeiculoCreate):
-    veiculo_existente = veiculos_dao.obter_por_id(id)
-
-    if not veiculo_existente:
-        raise HTTPException(
-            status_code=status.HTTP_404_NOT_FOUND,
-            detail=f'Não existe um veículo com id = {id}'
-        )
-
-    veiculo = veiculos_dao.atualizar(id, veiculo_atualizado)
-    return veiculo
