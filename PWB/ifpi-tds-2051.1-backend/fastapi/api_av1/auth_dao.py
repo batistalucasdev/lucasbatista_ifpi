@@ -3,7 +3,7 @@ from fastapi import APIRouter, Depends, HTTPException, status
 
 from auth_dao import AuthDAO
 from auth_utils import verify_hash_password, create_jwt_token, get_current_user, hash_password, is_valid_password
-from modelos import SignInUser, Signuser, Usuario
+from modelos import SignInUser, SignUpUser, Usuario
 
 router = APIRouter()
 
