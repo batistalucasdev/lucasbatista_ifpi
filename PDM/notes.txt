@@ -1,0 +1,21 @@
+main ()
+
+STL -> Stateless
+- theme
+- home
+
+STF -> Stateful
+
+STA -> State
+
+pasta /lib
+main.dart -> principal
+
+                                                            .: Projeto 2 :.
+
+-criar o projeto normal
+-apagar as duas ultimas classes
+-digitar/criar a STF + enter + digitar o nome MyHomePage
+-ele criar duas classes novamente (STF e STA)
+-
+
